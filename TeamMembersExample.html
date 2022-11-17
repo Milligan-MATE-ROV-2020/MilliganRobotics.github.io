@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -9,7 +7,7 @@
 </head>
 <body>
     <div id="myData"></div>
-    <script> type = "module" src = "TeamMembersExample.js"
+    <script type="module" ;="" src="./static/TeamMembersExample.js">
     import TeamMembers from 'TeamMembers.json' assert {type: 'json'};
     console.log(TeamMembers.TeamMemberNames);
     addItem = (e) => {
@@ -28,7 +26,7 @@
             body: JSON.stringify(ob)
             
  })
-        fetch('TeamMembers.json')
+        fetch('./TeamMembers.json')
             .then(function (response) {
                 return response.json();
             })
@@ -47,5 +45,5 @@
             }
         }
     </script>
-</body>
-</html> 
+
+ </body></html>
