@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script><!--adds the p5.dom (Document object model library)-->
+    <script>
+  
+  let loadedJSON = null;
+  
+function setup() {
+  createCanvas(500, 400);
+  textSize(22);
+  
+  text("Click on the button below to load JSON from file", 20, 20);
+  
+  // Create a button for loading the JSON
+  loadBtn = createButton("Load JSON from file");
+  loadBtn.position(30, 50)
+  loadBtn.mousePressed(loadJSONFile);
+}
+  
+function loadJSONFile() {
+  // Load the JSON from file
+  loadedJSON = loadJSON('TeamMembers.json', onFileload);
+}
+  
+function onFileload() {
+  text("File loaded successfully...", 30, 100);
+  for (let i = 0; i < 3; i++) {
+    text("Name: " + loadedJSON[i]["TeamMembers.TeamMemberName"], 30, 140 + i * 80);
+    text("Author: " + loadedJSON[i]["author"], 30, 160 + i * 80);
+    text("Price: " + loadedJSON[i]["price"], 30, 180 + i * 80);
+  }
+}
+
+
+/*
+    function setup() {
+  noLoop();
+  let url ="./TeamMembers.json";
+  loadJSON(url, drawEarthquake);
+}
+
+function draw() {
+  background(200);
+  describe(`50×50 ellipse that changes from black to white
+    depending on the current humidity`);
+}
+
+function drawEarthquake(earthquakes) {
+  // Get the magnitude and name of the earthquake out of the loaded JSON
+  let earthquakeMag = TeamMembers.TeamMemberNames[1];
+  
+  ellipse(width / 2, height / 2, earthquakeMag * 10, earthquakeMag * 10);
+  textAlign(CENTER);
+  text(earthquakeMag, 0, height - 30, width, 30);
+}
+*/
+    </script>
+</head>
+
+</html>
