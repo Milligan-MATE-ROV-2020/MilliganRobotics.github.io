@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data From json</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script><!--adds the p5.dom (Document object model library)-->
+    <script>
+
+
+
+
+// Examples used:
+//  https://p5js.org/reference/#/p5/loadJSON
+//  https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_document_getelementbyid
+let earthquakes;
+
+function preload() {
+  let url =
+   './SampleData.json';
+  JSON = loadJSON(url);
+}
+
+function setup() {
+  noLoop();
+}
+
+function draw() 
+{
+  DisplayText=JSON.TeamMembers[0].TeamMemberName;
+  document.getElementById("DisplayTextHere").innerHTML = DisplayText;
+}
+
+</script>
+
+<body>
+  <p id="DisplayTextHere"></p>
+  
+</body>
+  </body>
+</html>
+
